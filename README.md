@@ -635,7 +635,7 @@ to classify new data.
     the returned value is +1/-1.
 
 - Function: `double svm_predict_probability(const struct svm_model *model, 
-	    const struct svm_node *x, double* prob_estimates);`
+	const struct svm_node *x, double* prob_estimates);`
     
     This function does classification or regression on a test vector x
     given a model with probability information.
@@ -694,3 +694,94 @@ to classify new data.
     Users can specify their output format by a function. Use
     `svm_set_print_string_function(NULL);`
     for default printing to stdout.
+
+
+## Java Version
+
+The pre-compiled java class archive `libsvm.jar` and its source files are
+in the java directory. To run the programs, use
+
+```
+java -classpath libsvm.jar svm_train <arguments>
+java -classpath libsvm.jar svm_predict <arguments>
+java -classpath libsvm.jar svm_toy
+java -classpath libsvm.jar svm_scale <arguments>
+```
+
+Note that you need Java 1.5 (5.0) or above to run it.
+
+You may need to add Java runtime library (like classes.zip) to the classpath.
+You may need to increase maximum Java heap size.
+
+Library usages are similar to the C version. These functions are available:
+
+```
+public class svm {
+	public static final int LIBSVM_VERSION=318; 
+	public static svm_model svm_train(svm_problem prob, svm_parameter param);
+	public static void svm_cross_validation(svm_problem prob, svm_parameter param, int nr_fold, double[] target);
+	public static int svm_get_svm_type(svm_model model);
+	public static int svm_get_nr_class(svm_model model);
+	public static void svm_get_labels(svm_model model, int[] label);
+	public static void svm_get_sv_indices(svm_model model, int[] indices);
+	public static int svm_get_nr_sv(svm_model model);
+	public static double svm_get_svr_probability(svm_model model);
+	public static double svm_predict_values(svm_model model, svm_node[] x, double[] dec_values);
+	public static double svm_predict(svm_model model, svm_node[] x);
+	public static double svm_predict_probability(svm_model model, svm_node[] x, double[] prob_estimates);
+	public static void svm_save_model(String model_file_name, svm_model model) throws IOException
+	public static svm_model svm_load_model(String model_file_name) throws IOException
+	public static String svm_check_parameter(svm_problem prob, svm_parameter param);
+	public static int svm_check_probability_model(svm_model model);
+	public static void svm_set_print_string_function(svm_print_interface print_func);
+}
+```
+
+The library is in the "libsvm" package.
+Note that in Java version, svm_node[] is not ended with a node whose index = -1.
+
+Users can specify their output format by
+
+```
+your_print_func = new svm_print_interface()
+{ 
+	public void print(String s)
+	{
+		// your own format
+	}
+};
+svm.svm_set_print_string_function(your_print_func);
+```
+
+## Building Windows Binaries
+
+Windows binaries are in the directory `windows`. To build them via
+Visual C++, use the following steps:
+
+* Open a DOS command box (or Visual Studio Command Prompt) and change
+to libsvm directory. If environment variables of VC++ have not been
+set, type
+
+`C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat`
+
+You may have to modify the above command according which version of
+VC++ or where it is installed.
+
+* Type
+
+`nmake -f Makefile.win clean all`
+
+* (optional) To build shared library `libsvm.dll`, type
+
+`nmake -f Makefile.win lib`
+
+* (optional) To build 64-bit windows binaries, you must
+	* Setup `vcvars64.bat` instead of `vcvars32.bat`
+	* Change CFLAGS in Makefile.win: `/D _WIN32` to `/D _WIN64`
+
+Another way is to build them from Visual C++ environment. See details
+in libsvm FAQ.
+
+* Additional Tools: Sub-sampling, Parameter Selection, Format checking, etc.
+
+See the README file in the tools directory.
