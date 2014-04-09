@@ -92,39 +92,39 @@ There are some other useful programs in this package.
 
 `svm-scale`:
 
-	This is a tool for scaling input data file.
+This is a tool for scaling input data file.		
 
 `svm-toy`:
 
-	This is a simple graphical interface which shows how SVM
-	separate data in a plane. You can click in the window to 
-	draw data points. Use "change" button to choose class 
-	1, 2 or 3 (i.e., up to three classes are supported), "load"
-	button to load data from a file, "save" button to save data to
-	a file, "run" button to obtain an SVM model, and "clear"
-	button to clear the window.
+This is a simple graphical interface which shows how SVM
+separate data in a plane. You can click in the window to 
+draw data points. Use "change" button to choose class 
+1, 2 or 3 (i.e., up to three classes are supported), "load"
+button to load data from a file, "save" button to save data to
+a file, "run" button to obtain an SVM model, and "clear"
+button to clear the window.
 
-	You can enter options in the bottom of the window, the syntax of
-	options is the same as `svm-train'.
+You can enter options in the bottom of the window, the syntax of
+options is the same as `svm-train'.
 
-	Note that "load" and "save" consider dense data format both in
-	classification and the regression cases. For classification,
-	each data point has one label (the color) that must be 1, 2,
-	or 3 and two attributes (x-axis and y-axis values) in
-	[0,1). For regression, each data point has one target value
-	(y-axis) and one attribute (x-axis values) in [0, 1).
+Note that "load" and "save" consider dense data format both in
+classification and the regression cases. For classification,
+each data point has one label (the color) that must be 1, 2,
+or 3 and two attributes (x-axis and y-axis values) in
+[0,1). For regression, each data point has one target value
+(y-axis) and one attribute (x-axis values) in [0, 1).
 
-	Type `make` in respective directories to build them.
+Type `make` in respective directories to build them.
 
-	You need Qt library to build the Qt version.
-	(available from http://www.trolltech.com)
+You need Qt library to build the Qt version.
+(available from http://www.trolltech.com)
 
-	You need GTK+ library to build the GTK version.
-	(available from http://www.gtk.org)
-	
-	The pre-built Windows binaries are in the `windows'
-	directory. We use Visual C++ on a 32-bit machine, so the
-	maximal cache size is 2GB.
+You need GTK+ library to build the GTK version.
+(available from http://www.gtk.org)
+
+The pre-built Windows binaries are in the `windows'
+directory. We use Visual C++ on a 32-bit machine, so the
+maximal cache size is 2GB.
 
 `svm-train` Usage
 =====================
