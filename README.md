@@ -367,7 +367,7 @@ to classify new data.
     -----	-----	-----	-----	-----	-----
       1		  0	  0.1	  0.2	  0	  0
       2		  0	  0.1	  0.3	 -1.2	  0
-      1		  0.4	  0	  0	  0	  0
+      1		  0.4 0	  0	  0	  0
       2		  0	  0.1	  0	  1.4	  0.5
       3		 -0.1	 -0.2	  0.1	  1.1	  0.1
     ```
@@ -554,8 +554,8 @@ to classify new data.
     and should not be removed. For example, free_sv is 0 if svm_model
     is created by svm_train, but is 1 if created by svm_load_model.
 
-- Function: double svm_predict(const struct svm_model *model,
-                               const struct svm_node *x);
+- Function: `double svm_predict(const struct svm_model *model,
+                               const struct svm_node *x);`
 
     This function does classification or regression on a test vector x
     given a model.
@@ -565,8 +565,8 @@ to classify new data.
     the model is returned. For an one-class model, +1 or -1 is
     returned.
 
-- Function: void svm_cross_validation(const struct svm_problem *prob,
-	const struct svm_parameter *param, int nr_fold, double *target);
+- Function: `void svm_cross_validation(const struct svm_problem *prob,
+	const struct svm_parameter *param, int nr_fold, double *target);`
 
     This function conducts cross validation. Data are separated to
     nr_fold folds. Under given parameters, sequentially each fold is
@@ -576,33 +576,33 @@ to classify new data.
 
     The format of svm_prob is same as that for svm_train(). 
 
-- Function: int svm_get_svm_type(const struct svm_model *model);
+- Function: `int svm_get_svm_type(const struct svm_model *model);`
 
     This function gives svm_type of the model. Possible values of
     svm_type are defined in svm.h.
 
-- Function: int svm_get_nr_class(const svm_model *model);
+- Function: `int svm_get_nr_class(const svm_model *model);`
 
     For a classification model, this function gives the number of
     classes. For a regression or an one-class model, 2 is returned.
 
-- Function: void svm_get_labels(const svm_model *model, int* label)
+- Function: `void svm_get_labels(const svm_model *model, int* label)`
     
     For a classification model, this function outputs the name of
     labels into an array called label. For regression and one-class
     models, label is unchanged.
 
-- Function: void svm_get_sv_indices(const struct svm_model *model, int *sv_indices)
+- Function: `void svm_get_sv_indices(const struct svm_model *model, int *sv_indices)`
 
     This function outputs indices of support vectors into an array called sv_indices. 
     The size of sv_indices is the number of support vectors and can be obtained by calling svm_get_nr_sv. 
     Each sv_indices[i] is in the range of [1, ..., num_traning_data].
 
-- Function: int svm_get_nr_sv(const struct svm_model *model) 
+- Function: `int svm_get_nr_sv(const struct svm_model *model)`
 
     This function gives the number of total support vector.
 
-- Function: double svm_get_svr_probability(const struct svm_model *model);
+- Function: `double svm_get_svr_probability(const struct svm_model *model);`
 
     For a regression model with probability information, this function
     outputs a value sigma > 0. For test data, we consider the
@@ -612,8 +612,8 @@ to classify new data.
     If the model is not for svr or does not contain required
     information, 0 is returned.
 
-- Function: double svm_predict_values(const svm_model *model, 
-				    const svm_node *x, double* dec_values)
+- Function: `double svm_predict_values(const svm_model *model, 
+				    const svm_node *x, double* dec_values)`
 
     This function gives decision values on a test vector x given a
     model, and return the predicted label (classification) or
@@ -634,8 +634,8 @@ to classify new data.
     one-class model, dec_values[0] is the decision value of x, while
     the returned value is +1/-1.
 
-- Function: double svm_predict_probability(const struct svm_model *model, 
-	    const struct svm_node *x, double* prob_estimates);
+- Function: `double svm_predict_probability(const struct svm_model *model, 
+	    const struct svm_node *x, double* prob_estimates);`
     
     This function does classification or regression on a test vector x
     given a model with probability information.
@@ -648,15 +648,15 @@ to classify new data.
     is unchanged and the returned value is the same as that of
     svm_predict.
 
-- Function: const char *svm_check_parameter(const struct svm_problem *prob,
-                                            const struct svm_parameter *param);
+- Function: `const char *svm_check_parameter(const struct svm_problem *prob,
+                                        const struct svm_parameter *param);`
 
     This function checks whether the parameters are within the feasible
     range of the problem. This function should be called before calling
     svm_train() and svm_cross_validation(). It returns NULL if the
     parameters are feasible, otherwise an error message is returned.
 
-- Function: int svm_check_probability_model(const struct svm_model *model);
+- Function: `int svm_check_probability_model(const struct svm_model *model);`
 
     This function checks whether the model contains required
     information to do probability estimates. If so, it returns
@@ -664,33 +664,33 @@ to classify new data.
     before calling svm_get_svr_probability and
     svm_predict_probability.
 
-- Function: int svm_save_model(const char *model_file_name,
-			       const struct svm_model *model);
+- Function: `int svm_save_model(const char *model_file_name,
+			       const struct svm_model *model);`
 
     This function saves a model to a file; returns 0 on success, or -1
     if an error occurs.
 
-- Function: struct svm_model *svm_load_model(const char *model_file_name);
+- Function: `struct svm_model *svm_load_model(const char *model_file_name);`
 
     This function returns a pointer to the model read from the file,
     or a null pointer if the model could not be loaded.
 
-- Function: void svm_free_model_content(struct svm_model *model_ptr);
+- Function: `void svm_free_model_content(struct svm_model *model_ptr);`
 
     This function frees the memory used by the entries in a model structure.
 
-- Function: void svm_free_and_destroy_model(struct svm_model **model_ptr_ptr);
+- Function: `void svm_free_and_destroy_model(struct svm_model **model_ptr_ptr);`
 
     This function frees the memory used by a model and destroys the model
     structure. It is equivalent to svm_destroy_model, which
     is deprecated after version 3.0.
 
-- Function: void svm_destroy_param(struct svm_parameter *param);
+- Function: `void svm_destroy_param(struct svm_parameter *param);`
 
     This function frees the memory used by a parameter set.
 
-- Function: void svm_set_print_string_function(void (*print_func)(const char *));
+- Function: `void svm_set_print_string_function(void (*print_func)(const char *));`
 
     Users can specify their output format by a function. Use
-        svm_set_print_string_function(NULL); 
+    `svm_set_print_string_function(NULL);`
     for default printing to stdout.
