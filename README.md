@@ -769,32 +769,31 @@ in libsvm FAQ.
 
 See the README file in the tools directory.
 
-MATLAB/OCTAVE Interface
-=======================
+*** MATLAB/OCTAVE Interface
 
-Please check the file README in the directory `matlab'.
+Please check the file README in the directory `matlab`.
 
-Python Interface
-================
+*** Python Interface
 
 See the README file in python directory.
 
-Additional Information
-======================
+*** Additional Information
 
 If you find LIBSVM helpful, please cite it as
 
-Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support
+* Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support
 vector machines. ACM Transactions on Intelligent Systems and
 Technology, 2:27:1--27:27, 2011. Software available at
 http://www.csie.ntu.edu.tw/~cjlin/libsvm
 
 LIBSVM implementation document is available at
-http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf
 
-For any questions and comments, please email cjlin@csie.ntu.edu.tw
+* http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf
 
-Acknowledgments:
+For any questions and comments, please email `cjlin@csie.ntu.edu.tw`
+
+*** Acknowledgments
+
 This work was supported in part by the National Science 
 Council of Taiwan via the grant NSC 89-2213-E-002-013.
 The authors thank their group members and users
