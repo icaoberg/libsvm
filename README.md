@@ -10,8 +10,7 @@ Libsvm is available at
 
 Please read the COPYRIGHT file before using libsvm.
 
-Table of Contents
-=================
+* Table of Contents
 
 - Quick Start
 - Installation and Data Format
@@ -29,8 +28,7 @@ Table of Contents
 - Python Interface
 - Additional Information
 
-Quick Start
-===========
+* Quick Start
 
 If you are new to SVM and if the data is not large, please go to 
 `tools' directory and use easy.py after installation. It does 
@@ -41,8 +39,7 @@ Usage: `easy.py training_file [testing_file]`
 More information about parameter selection can be found in
 `tools/README`.
 
-Installation and Data Format
-============================
+* Installation and Data Format
 
 On Unix systems, type `make` to build the `svm-train` and `svm-predict`
 programs. Run them without arguments to show the usages of them.
@@ -126,8 +123,9 @@ The pre-built Windows binaries are in the `windows'
 directory. We use Visual C++ on a 32-bit machine, so the
 maximal cache size is 2GB.
 
-`svm-train` Usage
-=====================
+* Usage
+
+** `svm-train` Usage
 
 ```
 Usage: svm-train [options] training_set_file [model_file]
@@ -166,8 +164,7 @@ validation accuracy/mean squared error on them.
 
 See libsvm FAQ for the meaning of outputs.
 
-`svm-predict` Usage
-===================
+** `svm-predict` Usage
 
 ```
 Usage: svm-predict [options] test_file model_file output_file
@@ -179,8 +176,7 @@ test_file is the test data you want to predict.
 svm-predict will produce output in the output_file.
 ```
 
-`svm-scale` Usage
-=====================
+** `svm-scale` Usage
 
 ```
 Usage: svm-scale [options] data_filename
@@ -194,8 +190,7 @@ options:
 
 See 'Examples' in this file for examples.
 
-Tips on Practical Use
-=====================
+** Tips on Practical Use
 
 * Scale your data. For example, scale each attribute to [0,1] or [-1,+1].
 * For C-SVC, consider using the model selection tool in the tools directory.
@@ -206,8 +201,7 @@ Tips on Practical Use
   examples below).
 * Specify larger cache size (i.e., larger -m) for huge problems.
 
-Examples
-========
+** Examples
 
 ```
 > svm-scale -l -1 -u 1 -s range train > train.scale
@@ -254,8 +248,7 @@ the parameters C = 100 and gamma = 0.1
 Obtain a model with probability information and predict test data with
 probability estimates
 
-Precomputed Kernels 
-===================
+** Precomputed Kernels 
 
 Users may precompute kernel values and input them as training and
 testing files.  Then libsvm does not need the original
@@ -328,8 +321,7 @@ implies that the kernel matrix is
 [K(3,2) K(3,3)] = [0  1]
 ```
 
-Library Usage
-=============
+** Library Usage
 
 These functions and structures are declared in the header file
 `svm.h'.  You need to #include "svm.h" in your C/C++ source files and
@@ -764,8 +756,7 @@ nmake -f Makefile.win lib
 Another way is to build them from Visual C++ environment. See details
 in libsvm FAQ.
 
-- Additional Tools: Sub-sampling, Parameter Selection, Format checking, etc.
-============================================================================
+* Additional Tools: Sub-sampling, Parameter Selection, Format checking, etc.
 
 See the README file in the tools directory.
 
@@ -792,7 +783,7 @@ LIBSVM implementation document is available at
 
 For any questions and comments, please email `cjlin@csie.ntu.edu.tw`
 
-*** Acknowledgments
+* Acknowledgments
 
 This work was supported in part by the National Science 
 Council of Taiwan via the grant NSC 89-2213-E-002-013.
