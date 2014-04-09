@@ -8,6 +8,12 @@ Libsvm is available at
 http://www.csie.ntu.edu.tw/~cjlin/libsvm
 Please read the COPYRIGHT file before using libsvm.
 
+### Master branch status
+[![Build Status](https://travis-ci.org/icaoberg/libsvm.svg?branch=master)](https://travis-ci.org/icaoberg/libsvm)
+
+### Development branch status
+[![Build Status](https://travis-ci.org/icaoberg/libsvm.svg?branch=dev)](https://travis-ci.org/icaoberg/libsvm)
+
 Table of Contents
 =================
 

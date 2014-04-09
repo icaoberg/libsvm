@@ -6,6 +6,12 @@ classification, one-class-SVM, epsilon-SVM regression, and nu-SVM
 regression. It also provides an automatic model selection tool for
 C-SVM classification. This document explains the use of libsvm.
 
+### Master branch status
+[![Build Status](https://travis-ci.org/icaoberg/libsvm.svg?branch=master)](https://travis-ci.org/icaoberg/libsvm)
+
+### Development branch status
+[![Build Status](https://travis-ci.org/icaoberg/libsvm.svg?branch=dev)](https://travis-ci.org/icaoberg/libsvm)
+
 Libsvm is available at
 
 * http://www.csie.ntu.edu.tw/~cjlin/libsvm
