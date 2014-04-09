@@ -5,6 +5,9 @@ branches:
   only:
     - dev
 
+compiler:
+  - gcc
+
 before_install:
     - echo "before_install"
     - sudo apt-get update -qq
