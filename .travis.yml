@@ -5,6 +5,13 @@ branches:
   only:
     - dev
 
+notifications:
+  recipients:
+    - icaoberg@alumni.cmu.edu
+  email:
+    on_success: change
+    on_failure: always
+
 compiler:
   - gcc
 
