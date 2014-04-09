@@ -1,0 +1,13 @@
+language: cpp
+
+# whitelist
+branches:
+  only:
+    - dev
+
+before_install:
+    - echo "before_install"
+    - sudo apt-get update -qq
+
+script:
+    - make all
