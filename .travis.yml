@@ -14,11 +14,13 @@ before_install:
     - make all
 
 script:
-    - ./svm-scale -l -1 -u 1 -s range train     - train.scale
-    - ./svm-scale -r range test     - test.scale
-    - ./svm-train -s 0 -c 5 -t 2 -g 0.5 -e 0.1 data_file 
-    - ./svm-train -s 3 -p 0.1 -t 0 data_file
-    - ./svm-train -c 10 -w1 1 -w-2 5 -w4 2 data_file
-    - ./svm-train -s 0 -c 100 -g 0.1 -v 5 data_file
-    - ./svm-train -s 0 -b 1 data_file
-    - ./svm-predict -b 1 test_file data_file.model output_file
+    - ls
+    - pwd
+    #- ./svm-scale -l -1 -u 1 -s range train     - train.scale
+    #- ./svm-scale -r range test     - test.scale
+    #- ./svm-train -s 0 -c 5 -t 2 -g 0.5 -e 0.1 data_file 
+    #- ./svm-train -s 3 -p 0.1 -t 0 data_file
+    #- ./svm-train -c 10 -w1 1 -w-2 5 -w4 2 data_file
+    #- ./svm-train -s 0 -c 100 -g 0.1 -v 5 data_file
+    #- ./svm-train -s 0 -b 1 data_file
+    #- ./svm-predict -b 1 test_file data_file.model output_file
