@@ -4,9 +4,9 @@ classification, one-class-SVM, epsilon-SVM regression, and nu-SVM
 regression. It also provides an automatic model selection tool for
 C-SVM classification. This document explains the use of libsvm.
 
-Libsvm is available at 
+Libsvm is available at
 
-http://www.csie.ntu.edu.tw/~cjlin/libsvm
+* http://www.csie.ntu.edu.tw/~cjlin/libsvm
 
 Please read the COPYRIGHT file before using libsvm.
 
@@ -36,18 +36,18 @@ If you are new to SVM and if the data is not large, please go to
 `tools' directory and use easy.py after installation. It does 
 everything automatic -- from data scaling to parameter selection.
 
-Usage: easy.py training_file [testing_file]
+Usage: `easy.py training_file [testing_file]`
 
 More information about parameter selection can be found in
-`tools/README.'
+`tools/README`.
 
 Installation and Data Format
 ============================
 
-On Unix systems, type `make' to build the `svm-train' and `svm-predict'
+On Unix systems, type `make` to build the `svm-train` and `svm-predict`
 programs. Run them without arguments to show the usages of them.
 
-On other systems, consult `Makefile' to build them (e.g., see
+On other systems, consult `Makefile` to build them (e.g., see
 'Building Windows binaries' in this file) or use the pre-built
 binaries (Windows binaries are in the directory `windows').
 
@@ -60,41 +60,41 @@ The format of training and testing data file is:
 .
 ```
 
-Each line contains an instance and is ended by a ```'\n'``` character.  For
-classification, ```<label>``` is an integer indicating the class label
-(multi-class is supported). For regression, ```<label>``` is the target
+Each line contains an instance and is ended by a `'\n'` character.  For
+classification, `<label>` is an integer indicating the class label
+(multi-class is supported). For regression, `<label>` is the target
 value which can be any real number. For one-class SVM, it's not used
-so can be any number.  The pair ```<index>:<value>``` gives a feature
-(attribute) value: ```<index>``` is an integer starting from 1 and ```<value>```
+so can be any number.  The pair `<index>:<value>` gives a feature
+(attribute) value: `<index>` is an integer starting from 1 and `<value>`
 is a real number. The only exception is the precomputed kernel, where
-```<index>``` starts from 0; see the section of precomputed kernels. Indices
+`<index>` starts from 0; see the section of precomputed kernels. Indices
 must be in ASCENDING order. Labels in the testing file are only used
 to calculate accuracy or errors. If they are unknown, just fill the
 first column with any numbers.
 
 A sample classification data included in this package is
-`heart_scale'. To check if your data is in a correct form, use
-`tools/checkdata.py' (details in `tools/README').
+`heart_scale`. To check if your data is in a correct form, use
+`tools/checkdata.py` (details in `tools/README`).
 
-Type `svm-train heart_scale', and the program will read the training
-data and output the model file `heart_scale.model'. If you have a test
+Type `svm-train heart_scale`, and the program will read the training
+data and output the model file `heart_scale.model`. If you have a test
 set called heart_scale.t, then type `svm-predict heart_scale.t
-heart_scale.model output' to see the prediction accuracy. The `output'
+heart_scale.model output` to see the prediction accuracy. The `output`
 file contains the predicted class labels.
 
 For classification, if training data are in only one class (i.e., all
-labels are the same), then `svm-train' issues a warning message:
+labels are the same), then `svm-train` issues a warning message:
 `Warning: training data in only one class. See README for details,'
 which means the training data is very unbalanced. The label in the
 training data is directly returned when testing.
 
 There are some other useful programs in this package.
 
-svm-scale:
+`svm-scale`:
 
 	This is a tool for scaling input data file.
 
-svm-toy:
+`svm-toy`:
 
 	This is a simple graphical interface which shows how SVM
 	separate data in a plane. You can click in the window to 
@@ -114,7 +114,7 @@ svm-toy:
 	[0,1). For regression, each data point has one target value
 	(y-axis) and one attribute (x-axis values) in [0, 1).
 
-	Type `make' in respective directories to build them.
+	Type `make` in respective directories to build them.
 
 	You need Qt library to build the Qt version.
 	(available from http://www.trolltech.com)
@@ -126,7 +126,7 @@ svm-toy:
 	directory. We use Visual C++ on a 32-bit machine, so the
 	maximal cache size is 2GB.
 
-```svm-train``` Usage
+`svm-train` Usage
 =====================
 
 ```
@@ -166,8 +166,8 @@ validation accuracy/mean squared error on them.
 
 See libsvm FAQ for the meaning of outputs.
 
-```svm-predict``` Usage
-=======================
+`svm-predict` Usage
+===================
 
 ```
 Usage: svm-predict [options] test_file model_file output_file
@@ -179,7 +179,7 @@ test_file is the test data you want to predict.
 svm-predict will produce output in the output_file.
 ```
 
-```svm-scale``` Usage
+`svm-scale` Usage
 =====================
 
 ```
@@ -343,8 +343,8 @@ Before you classify test data, you need to construct an SVM model
 a file for later use. Once an SVM model is available, you can use it
 to classify new data.
 
-- Function: struct svm_model *svm_train(const struct svm_problem *prob,
-					const struct svm_parameter *param);
+- Function: `struct svm_model *svm_train(const struct svm_problem *prob,
+					const struct svm_parameter *param);`
 
     This function constructs and returns an SVM model according to
     the given training data and parameters.
