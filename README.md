@@ -1,4 +1,4 @@
-* libsvm 
+# libsvm 
 
 libsvm is a simple, easy-to-use, and efficient software for SVM
 classification and regression. It solves C-SVM classification, nu-SVM
@@ -12,7 +12,7 @@ Libsvm is available at
 
 Please read the COPYRIGHT file before using libsvm.
 
-* Table of Contents
+# Table of Contents
 
 - Quick Start
 - Installation and Data Format
@@ -30,7 +30,7 @@ Please read the COPYRIGHT file before using libsvm.
 - Python Interface
 - Additional Information
 
-* Quick Start
+# Quick Start
 
 If you are new to SVM and if the data is not large, please go to 
 `tools' directory and use easy.py after installation. It does 
@@ -41,7 +41,7 @@ Usage: `easy.py training_file [testing_file]`
 More information about parameter selection can be found in
 `tools/README`.
 
-* Installation and Data Format
+# Installation and Data Format
 
 On Unix systems, type `make` to build the `svm-train` and `svm-predict`
 programs. Run them without arguments to show the usages of them.
@@ -104,7 +104,7 @@ a file, "run" button to obtain an SVM model, and "clear"
 button to clear the window.
 
 You can enter options in the bottom of the window, the syntax of
-options is the same as `svm-train'.
+options is the same as `svm-train`.
 
 Note that "load" and "save" consider dense data format both in
 classification and the regression cases. For classification,
@@ -125,9 +125,9 @@ The pre-built Windows binaries are in the `windows'
 directory. We use Visual C++ on a 32-bit machine, so the
 maximal cache size is 2GB.
 
-* Usage
+# Usage
 
-** `svm-train` Usage
+## `svm-train` Usage
 
 ```
 Usage: svm-train [options] training_set_file [model_file]
@@ -166,7 +166,7 @@ validation accuracy/mean squared error on them.
 
 See libsvm FAQ for the meaning of outputs.
 
-** `svm-predict` Usage
+## `svm-predict` Usage
 
 ```
 Usage: svm-predict [options] test_file model_file output_file
@@ -178,7 +178,7 @@ test_file is the test data you want to predict.
 svm-predict will produce output in the output_file.
 ```
 
-** `svm-scale` Usage
+## `svm-scale` Usage
 
 ```
 Usage: svm-scale [options] data_filename
@@ -192,7 +192,7 @@ options:
 
 See 'Examples' in this file for examples.
 
-** Tips on Practical Use
+## Tips on Practical Use
 
 * Scale your data. For example, scale each attribute to [0,1] or [-1,+1].
 * For C-SVC, consider using the model selection tool in the tools directory.
