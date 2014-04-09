@@ -726,32 +726,31 @@ Users can specify their output format by
 	};
 	svm.svm_set_print_string_function(your_print_func);
 
-Building Windows Binaries
-=========================
+## Building Windows Binaries
 
 Windows binaries are in the directory `windows'. To build them via
 Visual C++, use the following steps:
 
-1. Open a DOS command box (or Visual Studio Command Prompt) and change
+* Open a DOS command box (or Visual Studio Command Prompt) and change
 to libsvm directory. If environment variables of VC++ have not been
 set, type
 
-"C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
+`C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat`
 
 You may have to modify the above command according which version of
 VC++ or where it is installed.
 
-2. Type
+* Type
 
-nmake -f Makefile.win clean all
+`nmake -f Makefile.win clean all`
 
-3. (optional) To build shared library libsvm.dll, type
+* (optional) To build shared library `libsvm.dll`, type
 
-nmake -f Makefile.win lib
+`nmake -f Makefile.win lib`
 
-4. (optional) To build 64-bit windows binaries, you must
-	(1) Setup vcvars64.bat instead of vcvars32.bat
-	(2) Change CFLAGS in Makefile.win: /D _WIN32 to /D _WIN64
+* (optional) To build 64-bit windows binaries, you must
+	* Setup `vcvars64.bat` instead of `vcvars32.bat`
+	* Change CFLAGS in Makefile.win: `/D _WIN32` to `/D _WIN64`
 
 Another way is to build them from Visual C++ environment. See details
 in libsvm FAQ.
@@ -783,7 +782,7 @@ LIBSVM implementation document is available at
 
 For any questions and comments, please email `cjlin@csie.ntu.edu.tw`
 
-* Acknowledgments
+# Acknowledgments
 
 This work was supported in part by the National Science 
 Council of Taiwan via the grant NSC 89-2213-E-002-013.
