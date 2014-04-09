@@ -5,7 +5,9 @@ regression. It also provides an automatic model selection tool for
 C-SVM classification. This document explains the use of libsvm.
 
 Libsvm is available at 
+
 http://www.csie.ntu.edu.tw/~cjlin/libsvm
+
 Please read the COPYRIGHT file before using libsvm.
 
 Table of Contents
@@ -13,9 +15,9 @@ Table of Contents
 
 - Quick Start
 - Installation and Data Format
-- `svm-train' Usage
-- `svm-predict' Usage
-- `svm-scale' Usage
+- `svm-train` Usage
+- `svm-predict` Usage
+- `svm-scale` Usage
 - Tips on Practical Use
 - Examples
 - Precomputed Kernels 
